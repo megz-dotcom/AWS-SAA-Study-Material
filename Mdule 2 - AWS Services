@@ -6,10 +6,10 @@
 
 ## 1. Quick Overview
 - What: AWS is a broad cloud platform providing managed services for compute, storage, databases, networking, analytics, ML, security, migration, developer tools and more.
-- How to read names: Service names usually indicate purpose (EC2 = compute, S3 = storage, RDS = relational DB). Some services are named after OSS tech they manage (EKS = Kubernetes, OpenSearch = Elasticsearch-compatible).
+- How to read names: Service names usually indicate purpose (EC2 = compute, S3 = storage, RDS = relational DB). Some services are named after OSS tech they manage (EKS = Kubernetes, OpenSearch = Elast[...]
 - Study tip: Group services by function (Compute, Storage, Database, Networking, Security, DevOps, ML) — this reduces memorization work.
 
-Suggested image: images/overview-cloud-map.png — "AWS services grouped by category (visual map)"
+![AWS services grouped by category (visual map)](images/overview-cloud-map.png)
 
 ---
 
@@ -35,9 +35,8 @@ Exam tips:
 - Billing differences (EC2 = instance-hours; Lambda = invocations+duration).
 - Understand cold starts and Provisioned Concurrency for Lambda.
 
-Suggested images:
-- images/compute-comparison-table.png — "EC2 vs Lambda vs Fargate — quick decision table"
-- images/lambda-invocation-flow.png — "Basic Lambda invocation lifecycle"
+![EC2 vs Lambda vs Fargate — quick decision table](images/compute-comparison-table.png)
+
 
 ---
 
@@ -56,9 +55,7 @@ When to use:
 - ECS for simpler AWS-integrated orchestration.
 - Fargate to avoid managing worker nodes.
 
-Suggested images:
-- images/container-architecture.png — "ECS/EKS + Fargate architecture"
-- images/ecr-ci-cd-flow.png — "CI/CD: build → push to ECR → deploy"
+![ECS/EKS + Fargate architecture](images/container-architecture.png)
 
 ---
 
@@ -83,9 +80,7 @@ Exam tips:
 - Know S3 consistency and lifecycle transitions to Glacier.
 - Snapshots vs backups: EBS snapshots are incremental and stored in S3 behind the scenes.
 
-Suggested images:
-- images/storage-decision-diagram.png — "When to use S3 vs EBS vs EFS vs FSx"
-- images/s3-lifecycle-policy.png — "S3 lifecycle transitions"
+![When to use S3 vs EBS vs EFS vs FSx](images/storage-decision-diagram.png)
 
 ---
 
@@ -110,8 +105,7 @@ Exam tips:
 - Multi-AZ vs Read Replicas: Multi-AZ = HA failover; Read replicas = read scaling.
 - Know typical integration points (DynamoDB Accelerator, DAX; Aurora read replicas).
 
-Suggested images:
-- images/db-choice-matrix.png — "Relational vs NoSQL vs In-memory vs Analytics — use cases"
+![Relational vs NoSQL vs In-memory vs Analytics — use cases](images/db-choice-matrix.png)
 
 ---
 
@@ -130,9 +124,7 @@ Exam tips:
 - Understand CloudFormation change sets and rollback behavior.
 - CDK synthesizes to CloudFormation templates under the hood.
 
-Suggested images:
-- images/ci-cd-pipeline.png — "Typical pipeline: code → build → test → deploy"
-- images/cloudformation-stack.png — "CloudFormation stack / nested stacks"
+![Typical pipeline: code → build → test → deploy](images/ci-cd-pipeline.png)
 
 ---
 
@@ -152,8 +144,7 @@ When to use:
 Exam tips:
 - CloudWatch metrics vs EventBridge events — alarms trigger on metric thresholds; EventBridge routes events.
 
-Suggested images:
-- images/cloudwatch-architecture.png — "Metrics + logs + events pipeline"
+![Metrics + logs + events pipeline](images/cloudwatch-architecture.png)
 
 ---
 
@@ -170,8 +161,7 @@ Key services:
 Exam tips:
 - Centralize CloudTrail logs to an S3 bucket, enable log file validation, and integrate with Athena for queries.
 
-Suggested images:
-- images/cloudtrail-centralization.png — "Centralize CloudTrail logs across accounts"
+![Centralize CloudTrail logs across accounts](images/cloudtrail-centralization.png)
 
 ---
 
@@ -187,9 +177,7 @@ Key services:
 Exam tips:
 - KMS is used by many AWS services for encryption; Secrets Manager supports automatic rotation for supported resources.
 
-Suggested images:
-- images/kms-key-usage.png — "KMS envelope encryption flow"
-- images/waf-rule-example.png — "WAF rule example"
+![KMS envelope encryption flow](images/kms-key-usage.png)
 
 ---
 
@@ -208,9 +196,7 @@ Exam tips:
 - ALB for HTTP/HTTPS (path-based routing, host-based routing), NLB for extreme performance and static IPs.
 - Understand public vs private subnets and NAT Gateway behavior.
 
-Suggested images:
-- images/vpc-basics.png — "VPC with public/private subnets + NAT Gateway"
-- images/cloudfront-flow.png — "CloudFront origin and edge caching"
+![VPC with public/private subnets + NAT Gateway](images/vpc-basics.png)
 
 ---
 
@@ -229,9 +215,7 @@ Key services:
 Exam tips:
 - FIFO queues guarantee ordering and exactly-once processing (with deduplication) vs standard queues (at-least-once delivery).
 
-Suggested images:
-- images/eventbridge-pattern.png — "EventBridge event bus → rules → targets"
-- images/sqs-sns-fanout.png — "SNS fanout to multiple SQS queues & Lambda"
+![EventBridge event bus → rules → targets](images/eventbridge-pattern.png)
 
 ---
 
@@ -248,9 +232,7 @@ Exam tips:
 - Distinguish Cognito user pools (authentication) vs identity pools (temporary AWS credentials).
 - Understand role assumption and STS temporary credentials.
 
-Suggested images:
-- images/iam-role-trust.png — "IAM role trust relationship"
-- images/cognito-auth-flow.png — "Cognito user pool + identity pool flow"
+![IAM role trust relationship](images/iam-role-trust.png)
 
 ---
 
@@ -265,9 +247,7 @@ Key services & examples:
 - Amazon Lex / Transcribe / Polly — conversational and speech services.
 - Amazon Kendra, Personalize, Forecast, Fraud Detector, Lookout, DevOps ML tools (DevOps Guru, CodeGuru).
 
-Suggested images:
-- images/sagemaker-workflow.png — "SageMaker build → train → deploy"
-- images/ai-usecases.png — "Common ML service use-cases matrix"
+![SageMaker build → train → deploy](images/sagemaker-workflow.png)
 
 ---
 
@@ -283,8 +263,7 @@ Key services:
 Exam tips:
 - Use Snow family when bandwidth is limited; use DMS for continuous DB replication with minimal downtime.
 
-Suggested images:
-- images/dms-replication.png — "DMS continuous replication architecture"
+![DMS continuous replication architecture](images/dms-replication.png)
 
 ---
 
@@ -303,8 +282,7 @@ Key services:
 When to use:
 - Kinesis for streaming telemetry; Athena for ad-hoc queries on S3; Redshift for OLAP workloads.
 
-Suggested images:
-- images/streaming-architecture.png — "Kinesis data stream → consumers → storage/analytics"
+![Kinesis data stream → consumers → storage/analytics](images/streaming-architecture.png)
 
 ---
 
@@ -319,8 +297,7 @@ Key services:
 Exam tips:
 - SCPs provide account-wide guardrails and are applied at the Organization Unit (OU) level; they do not grant permissions.
 
-Suggested images:
-- images/multi-account-landing-zone.png — "Control Tower & Organizations landing zone"
+![Control Tower & Organizations landing zone](images/multi-account-landing-zone.png)
 
 ---
 
